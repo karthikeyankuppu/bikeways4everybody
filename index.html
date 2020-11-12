@@ -195,15 +195,20 @@
 		map.removeLayer(floodmap);
 	    };
 	    // Get CARTO selection as GeoJSON and Add to Map
-	    $.getJSON("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery, function(data) {
-		floodmap = L.geoJson(data,{
-		    onEachFeature: function (feature, layer) {
-			layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
-			layer.cartodb_id=feature.properties.cartodb_id;
-		    }
+	  
+		$.ajax({
+		  url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery,
+		  dataType: 'json',
+		  headers: {
+		    'Access-Control-Allow-Origin': '*',
+		  },
+		  success: function(data) {
+				floodmap = L.geoJson(data,{
+				onEachFeature: function (feature, layer) {
+				layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
+				layer.cartodb_id=feature.properties.cartodb_id;
+		    }}}
 		}).addTo(map);
-	    });
-	};
 	    
 	$( document ).ready(function() {
 		  showAll();
