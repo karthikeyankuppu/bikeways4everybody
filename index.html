@@ -47,8 +47,8 @@
           <ul style="list-style-type: none; padding-left: 0px">
             <li><label for="username">Please Enter Your First Name</label></li>
             <li><input type="text" name="username" id="username" placeholder="Enter your name" pattern="[A-Za-z]{3,}" title="Your first name must be at least 3 letters" class="text ui-widget-content ui-corner-all" required></li>
-            <li><label for="zipcode">Please Enter Your Zipcode</label></li>
-            <li><input type="text" name="zipcode" maxlength="5" pattern="[0-9]{5}" id="zipcode" title="Please enter a 5 digit zip-code" placeholder="02134" class="text ui-widget-content ui-corner-all" required></li>
+            <li><label for="zipcode">Please Enter Your Locality</label></li>
+            <li><input type="text" name="zipcode" maxlength="5" pattern="[0-9]{5}" id="zipcode" title="Please enter a locality" placeholder="02134" class="text ui-widget-content ui-corner-all" required></li>
           </ul>
         </fieldset>
       </form>
@@ -69,10 +69,10 @@
     <!-- Interaction buttons template (top left) -->
     <script id="hidden-interaction-buttons-template" type="text/x-custom-template">
 
-    	<span style="font-size:x-large"><div id="add-route" class="circle type1 icon-hover tooltip" title="Draw routes on the map where you want improved infrastructure">
+    	<span style="font-size:x-large"><div id="add-route" class="circle type1 icon-hover tooltip" title="Draw endpoint of the streets that are flooded">
     		<i class="fa fa-pencil fa-3x fa-inverse" style="margin-top: 10px;"></i>
     	</div></span>
-    	<div id="add-point" class="circle type1 icon-hover tooltip" title="Add points to the map where you want improved infrastructure">
+    	<div id="add-point" class="circle type1 icon-hover tooltip" title="Add flooding hazard point e.g. open manhole covers">
     		<i class="fa fa-map-marker fa-inverse fa-3x" style="margin-top: 5px;"></i>
     	</div><br>
     	&emsp;<div id="about" class="circle type1 icon-hover tooltip" title="Learn more">
@@ -381,18 +381,6 @@
         
 	function dialogGlobalChecker(name, zip) {
             var error = [];
-            var valid = true;
-            if(name.length < 3) {
-                error.push("Your name is too short.");
-                valid = false;
-            }
-            if(zip.length < 5){
-                error.push("Your zipcode is too short.");
-                valid = false;
-            }else if(!/(^\d{5}$)/.test(zip)){
-                error.push("Your zipcode is invalid.");
-                valid = false;
-            }
             return {valid: valid, error: error};        
     }
      
