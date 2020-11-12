@@ -198,7 +198,7 @@
 
 	  $.ajax({
 	    url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery,
-	    dataType: 'json',
+	    dataType: 'jsonp',
 	    headers: {
 	      	'Access-Control-Allow-Origin': 'https://carto.com',
 		'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, POST, DELETE, OPTIONS',
