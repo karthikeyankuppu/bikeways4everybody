@@ -4,11 +4,11 @@
 
 var config = {
 	//Set Map Bounds & point map is centered around
-	mapFocus : [42.381899, -71.122499],
-	south : 42.24 ,
-	west : -71.27,
-	north : 42.453,
-	east : -70.95,
+	mapFocus : [15.4909, 73.8278],
+	south : 15.4 ,
+	west : 73.7,
+	north : 15.6,
+	east : 74.0,
 	//Mapbox access token & key for basemap
 	mapboxAccessToken :              
             'pk.eyJ1IjoicmVtb3RlZ2VudHJpZnkiLCJhIjoiY2lnanJzMjJpMDA1dnYxbHo5MTZtdGZsYSJ9.gLE8d40zmDAtMSSZyd2h1Q',
