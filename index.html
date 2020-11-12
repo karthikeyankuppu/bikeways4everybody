@@ -206,9 +206,11 @@
 				floodmap = L.geoJson(data,{
 				onEachFeature: function (feature, layer) {
 				layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
-				layer.cartodb_id=feature.properties.cartodb_id;
-		    }}}
-		}).addTo(map);
+				layer.cartodb_id=feature.properties.cartodb_id;}
+				}}
+			}).addTo(map);
+		  });
+	}
 	    
 	$( document ).ready(function() {
 		  showAll();
