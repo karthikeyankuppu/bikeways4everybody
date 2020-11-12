@@ -200,7 +200,7 @@
 		  url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery,
 		  dataType: 'json',
 		  headers: {
-		    'Access-Control-Allow-Origin': '*',
+		    'Access-Control-Allow-Origin': 'https://carto.com',
 		  },
 		  success: function(data) {
 				floodmap = L.geoJson(data,{
