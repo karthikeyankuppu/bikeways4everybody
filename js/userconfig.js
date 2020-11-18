@@ -13,7 +13,7 @@ var config = {
 	mapboxAccessToken :              
             'pk.eyJ1IjoicmVtb3RlZ2VudHJpZnkiLCJhIjoiY2lnanJzMjJpMDA1dnYxbHo5MTZtdGZsYSJ9.gLE8d40zmDAtMSSZyd2h1Q',
     //Change to your username, insert function on cartodb, and cartodb tablename (see also /cartoDB_functions)
-	cartoDBusername : 'karthikeyankuppu',
+	cartoDBusername : 'raphaeld',
 	cartoDBinsertfunction : 'insert_bikeways_data',
 	walkthroughWelcome: "<p>You can add in streets around Panaji that you see currently flooded. </p><p>The map shows currently flooded streets around the city.</p>"
 };
