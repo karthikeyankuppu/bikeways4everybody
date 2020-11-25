@@ -29,7 +29,7 @@
 <!--      Geotiff-->	  
 <script src="leaflet-geotiff-plotty.js"></script> 
     <script src="leaflet-geotiff-vector.js"></script> 
-	  <script type="text/javascript" src="data/DEM.json></script>
+	  <script type="text/javascript" src="data/DEM.tif></script>
 <!--      /Geotiff-->	  
 	  
 <!--      QGIS Webmap-->
@@ -116,7 +116,8 @@
             maxZoom: 19
         });
         CartoDB_PositronNoLabels.addTo(map);
-        
+																		    
+        var layer = L.leafletGeotiff(DEM).addTo(map);
         
             //Empty to store markers after they are submitted
         var submittedData = L.geoJson(false, {
