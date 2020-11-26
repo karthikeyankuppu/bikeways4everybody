@@ -26,11 +26,7 @@
     <script src="//cdn.jsdelivr.net/leaflet.locatecontrol/0.52.0/L.Control.Locate.min.js"></script>
 <!--      /Geolocate Button-->
 	  
-<!--      Geotiff-->	  
-    <script src="https://unpkg.com/geotiff@0.4.1/dist/main.js"></script> 
-    <script src="https://unpkg.com/plotty@0.2.0/src/plotty.js"></script> 
-	  <script type="text/javascript" src="data/DEM.tif></script>
-<!--      /Geotiff-->	  
+
 	  
 <!--      QGIS Webmap-->
         <link rel="stylesheet" href="css/label.css" />
@@ -116,8 +112,7 @@
             maxZoom: 19
         });
         CartoDB_PositronNoLabels.addTo(map);
-																		    
-        var layer = L.leafletGeotiff(DEM).addTo(map);
+																		   
         
             //Empty to store markers after they are submitted
         var submittedData = L.geoJson(false, {
