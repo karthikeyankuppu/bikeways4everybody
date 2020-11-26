@@ -198,24 +198,26 @@
 	    };
 	    // Get CARTO selection as GeoJSON and Add to Map
 
-	  $.ajax({
-	    url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery,
-	    dataType: 'jsonp',
-	    headers: {
-	      	'Access-Control-Allow-Origin': 'https://carto.com',
-		'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, POST, DELETE, OPTIONS',
-		'Access-Control-Allow-Headers': 'Origin, Content-Type, X-Auth-Token'
-	    },
-	    success: function(data) {
-	      floodmap = L.geoJson(data,{
-	      onEachFeature: function (feature, layer) {
-	      layer.bindPopup('<p><b>' + feature.properties.name + '</b><br /><em>' + feature.properties.address + '</em></p>');
-	      layer.cartodb_id=feature.properties.cartodb_id;}
-	    }).addTo(map);
-	    }
-	    })
+		
+		
+		
+	// request to CARTO account using the Fetch API
+	fetch("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery
+	)
+	// we transform the response from the Fetch API into a JSON format
+	.then((resp) => resp.json())
 
-	    }
+	.then((data) => {
+	    // we get the data from the request response
+	    console.log(response.rows[0])
+	})
+	.catch(function (error) {
+	    // check if the request is returning an error
+	    console.log(error)
+	});		
+
+		
+	
 	    
 	$( document ).ready(function() {
 		  showAll();
