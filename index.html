@@ -197,12 +197,6 @@
 	  map.removeLayer(floodmap);
 	    };
 	    // Get CARTO selection as GeoJSON and Add to Map
-
-		
-
-   $.getJSON("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSONP&q="+sqlQuery, function(data) {
-        coffeeShopLocations = L.geoJson(data).addTo(map);
-    });
 		
 		
     //Sending the data
