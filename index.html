@@ -200,7 +200,7 @@
 
 		
 
-   $.getJSON("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery, function(data) {
+   $.getJSON("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSONP&q="+sqlQuery, function(data) {
         coffeeShopLocations = L.geoJson(data).addTo(map);
     });
 		
