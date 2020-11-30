@@ -199,23 +199,10 @@
 	    // Get CARTO selection as GeoJSON and Add to Map
 
 		
-		
-		
-	// request to CARTO account using the Fetch API
-	fetch("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery
-	)
-	// we transform the response from the Fetch API into a JSON format
-	.then((resp) => resp.json())
 
-	.then((data) => {
-	    // we get the data from the request response
-	    console.log(response.rows[0])
-	})
-	.catch(function (error) {
-	    // check if the request is returning an error
-	    console.log(error)
-	});		
-
+   $.getJSON("https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSON&q="+sqlQuery, function(data) {
+        coffeeShopLocations = L.geoJson(data).addTo(map);
+    });
 		
 	}
 	    
