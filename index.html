@@ -204,6 +204,23 @@
         coffeeShopLocations = L.geoJson(data).addTo(map);
     });
 		
+		
+    //Sending the data
+      $.ajax({
+        type: 'GET',
+        url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSONP&q="+sqlQuery,
+        crossDomain: true,
+        dataType: 'jsonp',
+        success: function(data) {
+        	floodmap = L.geoJson(data).addTo(map);
+        },
+        error: function (data, textStatus, errorThrown) {
+
+            console.log("Problem saving the data",errorThrown);
+        }
+      });
+		
+		
 	}
 	    
 	$( document ).ready(function() {
