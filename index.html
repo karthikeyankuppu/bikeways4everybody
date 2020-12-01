@@ -201,9 +201,10 @@
 		
     //Sending the data
       $.ajax({
-        type: 'GET',
-        url: "https://"+config.cartoDBUserName+".carto.com/api/v2/sql?format=GeoJSONP&q="+sqlQuery,
+        type: 'POST',
+        url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql',
         crossDomain: true,
+	data: {"q":sqlQuery},
         dataType: 'jsonp',
         success: function(data) {
         	floodmap = L.geoJson(data).addTo(map);
