@@ -207,14 +207,9 @@
 		data: {"q":sqlQuery},
 		dataType: 'jsonp',
 		success: function(responseData, textStatus, jqXHR) {
-			floodmap = L.geoJson(responseData, {
-			    onEachFeature: function (feature, layer) {
-			      layer.cartodb_id=feature.properties.cartodb_id;
-			      drawnItems.addLayer(layer);
-			    }
-			  }).addTo(map).on('click', function(e) {
+			floodmap = L.geoJson(responseData).addTo(map).on('click', function(e) {
     					console.log(e.latlng)
-			)};
+			});
 		},
 		error: function (responseData, textStatus, jqXHR) {
 
