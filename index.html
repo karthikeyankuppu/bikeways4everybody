@@ -212,9 +212,7 @@
 			       layer.bindPopup(feature.properties.zipcode + feature.properties.cartodb_id);
 			   }
 				}).addTo(map);
-			L.control.layers({},{'<b>Level of Flooding</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Offstreet.png" /> 
-					     Stagnant Water <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Cycletrack.png" /> 
-					     Flowing Water <br />': responseData},{collapsed:false}).addTo(map);
+			L.control.layers({},{'<b>Level of Flooding</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Offstreet.png" /> Stagnant Water <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Cycletrack.png" /> Flowing Water <br />': responseData},{collapsed:false}).addTo(map);
 		},
 		error: function (responseData, textStatus, jqXHR) {
 
