@@ -211,9 +211,10 @@
 			   onEachFeature: function (feature, layer) {
 			       layer.bindPopup(feature.properties.zipcode + feature.properties.cartodb_id);
 			   }
-			}).addTo(map).on('click', function(e) {
-    					console.log(e.latlng)
-			});
+				}).addTo(map);
+			L.control.layers({},{'<b>Level of Flooding</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Offstreet.png" /> 
+					     Stagnant Water <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Cycletrack.png" /> 
+					     Flowing Water <br />': responseData},{collapsed:false}).addTo(map);
 		},
 		error: function (responseData, textStatus, jqXHR) {
 
@@ -608,11 +609,8 @@
                 ,pane: 'shadowPane'
             });
         layerOrder[layerOrder.length] = json_bikefacilitiesJSON;
-        feature_group.addLayer(json_bikefacilitiesJSON);
-        
-       L.control.layers({},{'<b>Level of Flooding</b><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Offstreet.png" /> Stagnant Water <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/legend/bikefacilities_Cycletrack.png" /> Flowing Water <br />': json_bikefacilitiesJSON},{collapsed:false}).addTo(map);
-        
-		L.control.scale({options: {position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}}).addTo(map);
+
+	L.control.scale({options: {position: 'bottomleft', maxWidth: 100, metric: true, imperial: false, updateWhenIdle: false}}).addTo(map);
         $(".leaflet-left .leaflet-control-scale").css({"display": "inline-block","float": "none"});
 		//http://stackoverflow.com/a/37173967/4047679
 		
