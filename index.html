@@ -198,22 +198,22 @@
 	    };
 	    // Get CARTO selection as GeoJSON and Add to Map
 		
-		
-    //Sending the data
-      $.ajax({
-        type: 'POST',
-        url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql',
-        crossDomain: true,
-	data: {"q":sqlQuery},
-        dataType: 'jsonp',
-        success: function(data) {
-        	floodmap = L.geoJson(data).addTo(map);
-        },
-        error: function (data, textStatus, errorThrown) {
 
-            console.log("Problem saving the data",errorThrown);
-        }
-      });
+	    //Retrieving the data
+	      $.ajax({
+		type: 'POST',
+		url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql',
+		crossDomain: true,
+		data: {"q":sqlQuery},
+		dataType: 'jsonp',
+		success: function(responseData, textStatus, jqXHR) {
+			floodmap = L.geoJson(responseData).addTo(map);
+		},
+		error: function (responseData, textStatus, jqXHR) {
+
+		    console.log("Problem saving the data",errorThrown);
+		}
+	      });
 		
 		
 	}
