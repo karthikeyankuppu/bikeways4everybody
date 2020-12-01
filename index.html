@@ -189,7 +189,7 @@
 	    
 	    
         var floodmap = null;
-	var sqlQuery = "SELECT * FROM panaji_floods";
+	var sqlQuery = "SELECT cartodb_id, the_geom FROM panaji_floods";
 	    
 	// Function to add flood map
 	function showAll(){
@@ -202,7 +202,7 @@
 	    //Retrieving the data
 	      $.ajax({
 		type: 'POST',
-		url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql',
+		url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql?format=geojson',
 		crossDomain: true,
 		data: {"q":sqlQuery},
 		dataType: 'jsonp',
