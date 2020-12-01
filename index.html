@@ -189,7 +189,7 @@
 	    
 	    
         var floodmap = null;
-	var sqlQuery = "SELECT cartodb_id, the_geom FROM panaji_floods";
+	var sqlQuery = "SELECT cartodb_id, the_geom, zipcode FROM panaji_floods";
 	    
 	// Function to add flood map
 	function showAll(){
@@ -207,7 +207,14 @@
 		data: {"q":sqlQuery},
 		dataType: 'jsonp',
 		success: function(responseData, textStatus, jqXHR) {
-			floodmap = L.geoJson(responseData).addTo(map).on('click', function(e) {
+			floodmap = L.geoJson(responseData,{
+			   style: function (feature) {
+			       return {[style properties here};
+			   },
+			   onEachFeature: function (feature, layer) {
+			       layer.bindPopup(feature.properties.zipcode + </br> + feature.properties.cartodb_id);
+			   }
+			}).addTo(map).on('click', function(e) {
     					console.log(e.latlng)
 			});
 		},
