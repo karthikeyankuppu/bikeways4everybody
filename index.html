@@ -199,7 +199,7 @@
 	    // Get CARTO selection as GeoJSON and Add to Map
 		
 
-	    //Retrieving the data
+	    //Retrieving the flooding data
 	      $.ajax({
 		type: 'POST',
 		url: 'https://'+config.cartoDBusername+'.cartodb.com/api/v2/sql?format=geojson',
@@ -209,7 +209,7 @@
 		success: function(responseData, textStatus, jqXHR) {
 			floodmap = L.geoJson(responseData,{
 			   onEachFeature: function (feature, layer) {
-			       layer.bindPopup(feature.properties.zipcode + </br> + feature.properties.cartodb_id);
+			       layer.bindPopup(feature.properties.zipcode + feature.properties.cartodb_id);
 			   }
 			}).addTo(map).on('click', function(e) {
     					console.log(e.latlng)
