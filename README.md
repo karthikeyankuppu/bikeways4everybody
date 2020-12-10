@@ -5,24 +5,35 @@ The tool’s repository can be found at github.com/karthikeyankuppu/mapping-pana
 
 # Architecture
 Front end
+
    •	Leaflet maps – for visualizing spatial data
+   
    •	Open Street Maps
+   
    •	JavaScript – functions and web interface
+
 Back end
+
    •	CartoDB – for spatial database
+   
    •	GitHub – static hosting service and repository
+   
 
 
 # Limitations
-   •	Currently, there is a limit on the number of data points that can be stored – a total of 10,000 inputs can be made and stored in the database
+   •	Currently, there is a limit on the number of data points that can be stored – a total of 10,000 inputs can be made and stored in the database.
+   
    •	Line segment inputs are derived based on a routing API. In case you do not get the right segments highlighted, please mark more points along the route. 
-   •	Too many users inputting information on the tool can cause slowdown and increase in response time for the inputs
+   
+   •	Too many users inputting information on the tool can cause slowdown and increase in response time for the inputs.
 
 
 # License
-	The tool has been adapted from Boston Cyclist Union’s Bikeways for Everybody campaign in 2014. The tool crowdsourced roads to be fixed for bicycling around the city of Boston. 
-	Reference Repository: https://github.com/radumas/bikeways4everybody
-	Reference Tool: 
+The tool has been adapted from Boston Cyclist Union’s Bikeways for Everybody campaign in 2014. The tool crowdsourced roads to be fixed for bicycling around the city of Boston.
+
+Reference Repository: https://github.com/radumas/bikeways4everybody
+
+Reference Tool: 
 
 	The Bikeways for Everybody tool allows for use of the tool under the license which is mentioned below:
 
