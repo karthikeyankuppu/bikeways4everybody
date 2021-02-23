@@ -101,7 +101,7 @@
 		var bounds = L.latLngBounds(L.latLng(config.south,config.west), L.latLng(config.north,config.east));
         var map = L.map('map', { 
             center: config.mapFocus,
-            zoom: 14, minZoom : 14, maxzoom: 18, maxBounds : bounds, zoomControl :false });
+            zoom: 14, minZoom : 14, maxzoom: 19, maxBounds : bounds});
         map.touchZoom.enable();
         L.control.zoom({position : 'bottomleft'}).addTo(map);
 		    
