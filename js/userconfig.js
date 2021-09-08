@@ -15,5 +15,5 @@ var config = {
     //Change to your username, insert function on cartodb, and cartodb tablename (see also /cartoDB_functions)
 	cartoDBusername : 'karthikeyankuppu',
 	cartoDBinsertfunction : 'insert_bikeways_data',
-	walkthroughWelcome: "<p>You can add in streets around Panaji that you see currently flooded. </p><p>The map shows currently flooded streets around the city.</p>"
+	walkthroughWelcome: "<p>The Panaji Flood Mapping Tool is a interactive web map created by Project Urban Living Lab to crowdsource and dissemenate information on flooding in Panaji. </p><p>You can mark streets around Panaji that you see currently flooded. The map shows currently flooded streets around the city added by others using the tool.</p><p> The Project Urban Living Lab (PULL) is India's first Urban Living Lab implemented by Oxford Policy Management, Transitions Research, and The Energy and Resources Institute (TERI), in partnership with Imagine Panaji Smart City Development Limited (IPSCDL) and with the support of of the Royal Danish Embassy, New Delhi. PULL aims to create a collaborative space for Iteratively designing, testing and fine-tuning socio-technical innovations to address complex urban challenges. </p>"
 };
